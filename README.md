@@ -144,3 +144,10 @@ Verbesserte Dokumentations‑ und GitHub‑Skills, um technische Projekte nachvo
 
 👤 Autor
 Mario Horvat
+
+
+## ⚖️ Hinweis
+
+Dieses Projekt wurde vollständig von mir erstellt.  
+Die Inhalte, Texte, Screenshots und Diagramme dürfen ohne meine ausdrückliche Zustimmung nicht kopiert oder weiterverwendet werden.
+

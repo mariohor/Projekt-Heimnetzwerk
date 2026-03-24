@@ -2,7 +2,12 @@
 
 ## 🗺️ Netzwerkdiagramm
 
-![Netzwerktopologie](screenshoots/netzwerktopologie.jpg)
+Eine visuelle Übersicht über die gesamte virtuelle Umgebung:
+
+<p align="center">
+  <img src="screenshoots/netzwerktopologie.jpg" alt="Netzwerktopologie" width="700">
+</p>
+
 
 
 ## 📌 Projektübersicht

@@ -93,7 +93,9 @@ Zugriff auf Systeme über diese IP-Adressen von überall
 Beispiel:
 ssh user@100.x.x.x
 
-🧠 Was ich gelernt habe
+---
+
+## 🧠 Was ich gelernt habe
 
 Vertieftes Verständnis für virtuelle Netzwerkarchitekturen und die Kommunikation zwischen verschiedenen Betriebssystemen innerhalb einer gemeinsamen Umgebung.
 

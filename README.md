@@ -74,6 +74,10 @@ ssh arch
 
 ➡️ Direkter Zugriff von Windows 11 auf Arch Linux ohne Passwort
 
+screenshoots/SSH-Verbindung%20-%20Alma%20to%20Debian%20and%20Ubuntu%20Desktop%20.jpg
+screenshoots/SSH-Verbindung%20-%3E%20win11-ubuntu%20desktop.jpg
+
+
 🌐 Netzwerk
 Kommunikation zwischen allen Systemen innerhalb der virtuellen Umgebung
 Nutzung von Hostnames zur Vereinfachung des Zugriffs

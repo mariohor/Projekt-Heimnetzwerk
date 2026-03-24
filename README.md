@@ -60,6 +60,7 @@ ssh arch
 🌐 Netzwerk
 Kommunikation zwischen allen Systemen innerhalb der virtuellen Umgebung
 Nutzung von Hostnames zur Vereinfachung des Zugriffs
+
 🔗 VPN (Tailscale)
 Integration aller Systeme in ein Tailscale-Netzwerk
 Automatische Vergabe zusätzlicher IP-Adressen

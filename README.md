@@ -46,6 +46,7 @@ Dabei lag der Fokus auf SSH-Authentifizierung, Netzwerkverständnis und der Nutz
 - Arch Linux  
 - Windows 11  
 
+
 <p align="center">
   <img src="screenshoots/VirtualBox-Übersicht.jpg" alt="VirtualBox Übersicht" width="700">
 </p>

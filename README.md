@@ -1,5 +1,10 @@
 # 🛡️ Virtuelle Netzwerk- & Security-Umgebung (Heimnetzwerk)
 
+## 🗺️ Netzwerkdiagramm
+
+![Netzwerktopologie](screenshoots/netzwerktopologie.jpg)
+
+
 ## 📌 Projektübersicht
 
 Dieses Projekt zeigt den Aufbau einer virtualisierten Netzwerkumgebung mit mehreren Linux- und Windows-Systemen. Ziel war es, sichere Kommunikation zwischen den Systemen zu ermöglichen sowie Remotezugriffe effizient und praxisnah umzusetzen.

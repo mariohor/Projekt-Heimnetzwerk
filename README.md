@@ -94,6 +94,7 @@ Beispiel:
 ssh user@100.x.x.x
 
 🧠 Was ich gelernt habe
+
 Vertieftes Verständnis für virtuelle Netzwerkarchitekturen und die Kommunikation zwischen verschiedenen Betriebssystemen innerhalb einer gemeinsamen Umgebung.
 
 Sichere SSH‑Konfigurationen inklusive Key‑Authentifizierung, Port‑Anpassungen und Hostname‑basiertem Zugriff.

@@ -68,28 +68,6 @@ Zugriff auf Systeme über diese IP-Adressen von überall
 Beispiel:
 ssh user@100.x.x.x
 
-🧪 Tests
-SSH-Verbindungen erfolgreich getestet
-Zugriff von Windows auf Linux überprüft
-VPN-Verbindungen über Tailscale getestet
-Erreichbarkeit aller Systeme bestätigt
-📊 Herausforderungen
-Einrichtung und Verteilung von SSH-Keys
-Sicherstellung der Netzwerkkommunikation zwischen allen VMs
-Verständnis der IP-Zuweisung im VPN
-Fehlersuche bei Verbindungsproblemen
-📈 Learnings
-SSH-Keys sind sicherer und effizienter als Passwort-Logins
-Netzwerkstruktur ist entscheidend für funktionierende Systeme
-VPN ermöglicht einfachen und sicheren Remotezugriff
-Praktische Fehleranalyse ist ein zentraler Bestandteil
-🔁 Reproduzierbarkeit
-VirtualBox installieren
-Virtuelle Maschinen erstellen
-Systeme aktualisieren
-SSH-Keys generieren und verteilen
-Netzwerk konfigurieren
-Tailscale installieren und verbinden
 
 👤 Autor
 Mario Horvat

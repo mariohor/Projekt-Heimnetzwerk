@@ -65,6 +65,35 @@ Dabei lag der Fokus auf SSH-Authentifizierung, Netzwerkverständnis und der Nutz
 
 ## 🔐 SSH-Konfiguration
 
+✔ Gemeinsame Einstellungen auf allen Systemen
+PermitRootLogin no  
+Root‑Login ist deaktiviert, um unbefugten Zugriff zu verhindern.
+
+PubkeyAuthentication yes  
+Nur SSH‑Key‑Authentifizierung ist erlaubt.
+
+PasswordAuthentication no  
+Passwort‑Login wurde vollständig abgeschaltet.
+
+MaxSessions 1  
+Jede Verbindung erlaubt nur eine aktive SSH‑Session.
+
+Port 50000  
+SSH läuft auf einem alternativen Port, um Standard‑Scans zu reduzieren.
+
+<p align="center">
+  <img src="screenshoots/PermitRootLogin%20no.jpg" alt="PermitRootLogin no" width="45%">
+  <img src="screenshoots/Port%2050000.jpg" alt="Port 50000" width="45%">
+</p>
+
+
+Um den Zugriff innerhalb der virtuellen Umgebung zu vereinfachen, habe ich alle Hostnames der Systeme (z. B. arch, debian, ubuntu-desktop, alma, win11) zentral dokumentiert. Dadurch kann ich mich deutlich schneller verbinden, ohne IP‑Adressen nachschlagen zu müssen.
+
+<p align="center">
+  <img src="screenshoots/SSH-Konfiguration%20unter%20Windows.jpg" alt="SSH-Konfiguration unter Windows" width="700">
+</p>
+
+
 - Erstellung von SSH-Key-Paaren  
 - Verteilung der Public Keys auf Linux-Systeme  
 - Passwortlose Anmeldung zwischen Systemen  

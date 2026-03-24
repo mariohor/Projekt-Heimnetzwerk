@@ -1,20 +1,57 @@
-# Projekt-Heimnetzwerk
-Virtuelle Netzwerk- & Security-Umgebung
+# 🛡️ Virtuelle Netzwerk- & Security-Umgebung (Heimnetzwerk)
 
-Aufbau einer virtualisierten Netzwerkumgebung mit Oracle VM VirtualBox
+## 📌 Projektübersicht
 
-Deployment mehrerer Systeme: Debian, AlmaLinux, Ubuntu Server/Desktop, Arch sowie Windows 11
+Dieses Projekt zeigt den Aufbau einer virtualisierten Netzwerkumgebung mit mehreren Linux- und Windows-Systemen. Ziel war es, sichere Kommunikation zwischen den Systemen zu ermöglichen sowie Remotezugriffe effizient und praxisnah umzusetzen.
 
-Einrichtung von pfSense als zentrale Firewall und Router (NAT, Firewall-Regeln, internes Routing)
+Dabei lag der Fokus auf SSH-Authentifizierung, Netzwerkverständnis und der Nutzung eines modernen VPNs (Tailscale).
 
-Simulation eines isolierten Heimnetzwerks mit mehreren Subnetzen
+---
 
-Absicherung von Remotezugriffen über SSH (Key-basierte Authentifizierung) und RDP
+## 🎯 Ziel des Projekts
 
-Zentrale Verteilung und Verwaltung von SSH-Keys zwischen den Linux-Systemen
+- Aufbau einer virtuellen Testumgebung  
+- Sichere Verbindung zwischen mehreren Systemen  
+- Umsetzung von SSH-Key-basierter Authentifizierung  
+- Einrichtung eines einfachen, sicheren Remotezugriffs  
+- Verständnis von IP-Strukturen und Netzwerkkommunikation  
 
-Integration von Tailscale zur Einrichtung eines sicheren Overlay-VPNs für Remotezugriff
+---
 
-Durchführung von Verbindungstests und Fehleranalyse (SSH, RDP, VPN, Routing)
+## 🏗️ Setup
 
-Dokumentation der Netzwerkstruktur und Konfigurationen für reproduzierbare Setups
+- Virtualisierung: Oracle VM VirtualBox  
+- Mehrere virtuelle Maschinen (Linux & Windows)  
+- Gemeinsames Netzwerk zur Kommunikation  
+
+---
+
+## 🖥️ Verwendete Systeme
+
+- Debian  
+- AlmaLinux  
+- Ubuntu Server  
+- Ubuntu Desktop  
+- Arch Linux  
+- Windows 11  
+
+---
+
+## ⚙️ Umsetzung
+
+- Installation mehrerer Betriebssysteme in VirtualBox  
+- Aktualisierung aller Systeme auf den neuesten Stand  
+- Aufbau einer funktionierenden Netzwerkverbindung zwischen den VMs  
+- Einrichtung von Remotezugriffen (SSH & RDP)  
+
+---
+
+## 🔐 SSH-Konfiguration
+
+- Erstellung von SSH-Key-Paaren  
+- Verteilung der Public Keys auf Linux-Systeme  
+- Passwortlose Anmeldung zwischen Systemen  
+
+Beispiel:
+```bash
+ssh arch

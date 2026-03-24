@@ -5,8 +5,9 @@
 Eine visuelle Übersicht über die gesamte virtuelle Umgebung:
 
 <p align="center">
-  <img src="screenshoots/netzwerktopologie.jpg" alt="Netzwerktopologie" width="700">
+  <img src="screenshoots/Netzwerktopologie.jpg" alt="Netzwerktopologie" width="700">
 </p>
+
 
 
 

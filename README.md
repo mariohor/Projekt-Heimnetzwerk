@@ -72,5 +72,3 @@ ssh user@100.x.x.x
 
 👤 Autor
 Mario Horvat
- 
- IT / Cybersecurity

@@ -53,7 +53,6 @@ Dabei lag der Fokus auf SSH-Authentifizierung, Netzwerkverständnis und der Nutz
 - Passwortlose Anmeldung zwischen Systemen  
 
 Beispiel:
-```bash
 ssh arch
 
 ➡️ Direkter Zugriff von Windows 11 auf Arch Linux ohne Passwort
@@ -67,8 +66,8 @@ Automatische Vergabe zusätzlicher IP-Adressen
 Zugriff auf Systeme über diese IP-Adressen von überall
 
 Beispiel:
-
 ssh user@100.x.x.x
+
 🧪 Tests
 SSH-Verbindungen erfolgreich getestet
 Zugriff von Windows auf Linux überprüft
@@ -91,13 +90,7 @@ Systeme aktualisieren
 SSH-Keys generieren und verteilen
 Netzwerk konfigurieren
 Tailscale installieren und verbinden
-📂 Projektstruktur
-/project-root
-│── README.md
-│── docs/
-│── screenshots/
-│── configs/
-👤 Autor
 
+👤 Autor
 Mario Horvat
 IT / Cybersecurity

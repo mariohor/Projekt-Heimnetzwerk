@@ -93,6 +93,22 @@ Zugriff auf Systeme über diese IP-Adressen von überall
 Beispiel:
 ssh user@100.x.x.x
 
+🧠 Was ich gelernt habe
+Vertieftes Verständnis für virtuelle Netzwerkarchitekturen und die Kommunikation zwischen verschiedenen Betriebssystemen innerhalb einer gemeinsamen Umgebung.
+
+Sichere SSH‑Konfigurationen inklusive Key‑Authentifizierung, Port‑Anpassungen und Hostname‑basiertem Zugriff.
+
+Analyse und Behebung typischer Netzwerkprobleme, z. B. DNS‑Fehler, Routing‑Konflikte, Firewall‑Regeln oder falsche Adaptereinstellungen.
+
+Effiziente Remotezugriffe über SSH, RDP und Tailscale – ohne öffentliche Portfreigaben.
+
+Strukturierter Aufbau einer Laborumgebung, inklusive Dokumentation, Screenshots und Netzwerkdiagrammen.
+
+Praxisnahe Arbeit mit mehreren Linux‑Distributionen, deren Paketverwaltung, Systemdiensten und Benutzerverwaltung.
+
+Grundlagen sicherer Netzwerkarchitektur, wie Segmentierung, Zugriffskontrolle und sichere Kommunikation zwischen Systemen.
+
+Verbesserte Dokumentations‑ und GitHub‑Skills, um technische Projekte nachvollziehbar und professionell aufzubereiten.
 
 👤 Autor
 Mario Horvat

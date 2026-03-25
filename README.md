@@ -73,7 +73,7 @@ grep -A 5 "<webgui>" /cf/conf/config.xml
 
 ---
 
-## 🔐 🔐 SSH‑Konfiguration
+## 🔐 SSH‑Konfiguration
 
 ✔ Gemeinsame Einstellungen auf allen Systemen  
 

@@ -38,7 +38,12 @@ Dabei lag der Fokus auf SSH-Authentifizierung, Netzwerkverständnis und der Nutz
 
 Nach der Einrichtung von pfSense habe ich überprüft, welche Ports und welche WebGUI-Protokollversion verwendet werden, um sicheren Zugriff über den Browser zu gewährleisten:
 
-  grep -A 5 "<webgui>" /cf/conf/config.xml
+grep -A 5 "<webgui>" /cf/conf/config.xml
+
+<p align="center">
+  <img src="screenshoots/pfsense gui.jpg" alt="pfSense GUI" width="700">
+</p>
+
 ---
 
 ## 🖥️ Verwendete Systeme

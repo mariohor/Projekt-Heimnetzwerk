@@ -1,0 +1,29 @@
+💡 Projekt-Notizen
+
+Für die pfSense-Konfiguration wurden die Adapter wie folgt eingerichtet: Adapter 1 ist auf NAT für den Internetzugang gesetzt, Adapter 2 auf das interne Netzwerk, um die Kommunikation mit allen VMs zu ermöglichen. Alle WMS-Systeme wurden auf dasselbe interne Netzwerk wie pfSense gelegt, beispielsweise Intnet.
+
+Nach der Installation von Tailscale auf allen Systemen müssen die Access Control Lists (ACLs) angepasst werden. Dabei werden alle IP-Adressen der VMs freigeschaltet, die eigene Mailadresse als Quelle eingetragen und der Port 50000 aktiviert. Nach Bestätigung des Logins über den bereitgestellten Link erscheint jedes OS auf der Tailscale-Webseite, was die Kontrolle über die Hosts ermöglicht.
+
+Für die Verwaltung von Hostnames unter Windows muss Notepad als Administrator ausgeführt werden, um die hosts-Datei korrekt zu bearbeiten. Für SSH-Verbindungen zwischen den VMs ist der nicht-standardmäßige Port 50000 zu verwenden.
+
+Die Firewall-Regeln in pfSense wurden so konfiguriert, dass alle internen Netzwerke (LAN) für die VMs freigegeben sind und die Kommunikation zwischen VMs sowie Tailscale-Verbindungen möglich ist. Im Session-Management wurde eingestellt, dass nur eine aktive SSH-Session pro Verbindung erlaubt ist (MaxSessions 1), der Root-Login deaktiviert (PermitRootLogin no) und ausschließlich Key-Authentifizierung genutzt wird, während Passwort-Login deaktiviert bleibt.
+
+Alle Hostnames der VMs wurden zentral dokumentiert, um SSH-Zugriffe ohne Nachschlagen von IP-Adressen zu erleichtern. Vor der Einrichtung von SSH, Tailscale oder WMS wurden alle Systeme vollständig aktualisiert, um Sicherheitsprobleme zu vermeiden.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

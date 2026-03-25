@@ -169,6 +169,8 @@ Strukturierter Aufbau einer Laborumgebung, inklusive Dokumentation, Screenshots 
 
 Praxisnahe Arbeit mit mehreren Linux‑Distributionen, deren Paketverwaltung, Systemdiensten und Benutzerverwaltung.
 
+Praxisnahe Konfiguration von pfSense, inklusive Zuweisung von WAN- und LAN-Interfaces, Überprüfung der GUI-Version und Platzierung aller VMs im gleichen internen Netzwerk.
+
 Grundlagen sicherer Netzwerkarchitektur, wie Segmentierung, Zugriffskontrolle und sichere Kommunikation zwischen Systemen.
 
 Verbesserte Dokumentations‑ und GitHub‑Skills, um technische Projekte nachvollziehbar und professionell aufzubereiten.

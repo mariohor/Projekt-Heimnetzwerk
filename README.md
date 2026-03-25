@@ -63,9 +63,16 @@ Dabei lag der Fokus auf SSH-Authentifizierung, Netzwerkverständnis und der Nutz
 
 ---
 
-## 🔐 SSH-Konfiguration
+## 🔐 🔐 SSH‑Konfiguration
+✔ Gemeinsame Einstellungen auf allen Systemen  
+Bevor die eigentliche SSH‑Konfiguration vorgenommen wurde, habe ich alle Linux‑Distributionen vollständig aktualisiert und anschließend geprüft, ob der SSH‑Dienst korrekt läuft:
 
-✔ Gemeinsame Einstellungen auf allen Systemen
+bash
+sudo systemctl status ssh
+sudo systemctl enable ssh
+sudo systemctl start ssh
+Erst danach wurden die sicherheitsrelevanten Einstellungen umgesetzt:
+
 PermitRootLogin no  
 Root‑Login ist deaktiviert, um unbefugten Zugriff zu verhindern.
 

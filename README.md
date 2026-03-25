@@ -34,11 +34,16 @@ Dabei lag der Fokus auf SSH-Authentifizierung, Netzwerkverständnis und der Nutz
 - Virtualisierung: Oracle VM VirtualBox  
 - Mehrere virtuelle Maschinen (Linux & Windows)  
 - Gemeinsames Netzwerk zur Kommunikation  
+- pfSense als Firewall und Router für das interne Netzwerk
 
+Nach der Einrichtung von pfSense habe ich überprüft, welche Ports und welche WebGUI-Protokollversion verwendet werden, um sicheren Zugriff über den Browser zu gewährleisten:
+
+grep -A 5 "<webgui>" /cf/conf/config.xml
 ---
 
 ## 🖥️ Verwendete Systeme
 
+- pfSense 
 - Debian  
 - AlmaLinux  
 - Ubuntu Server  
@@ -108,7 +113,6 @@ Um den Zugriff innerhalb der virtuellen Umgebung zu vereinfachen, habe ich alle 
   <img src="screenshoots/SSH-Konfiguration%20unter%20Windows.jpg" alt="SSH-Konfiguration unter Windows" width="700">
 </p>
 
-
 - Erstellung von SSH-Key-Paaren  
 - Verteilung der Public Keys auf Linux-Systeme  
 - Passwortlose Anmeldung zwischen Systemen  
@@ -123,19 +127,28 @@ ssh arch
   <img src="screenshoots/SSH-Verbindung%20-%3E%20win11-ubuntu%20desktop.jpg" alt="SSH Verbindung Win11" width="45%">
 </p>
 
+---
 
+🌐 Netzwerk & WMS-Integration
 
-🌐 Netzwerk
-Kommunikation zwischen allen Systemen innerhalb der virtuellen Umgebung
-Nutzung von Hostnames zur Vereinfachung des Zugriffs
+Alle WMS-Systeme wurden auf dasselbe interne Netzwerk wie pfSense gesetzt.
 
-🔗 VPN (Tailscale)
-Integration aller Systeme in ein Tailscale-Netzwerk
-Automatische Vergabe zusätzlicher IP-Adressen
-Zugriff auf Systeme über diese IP-Adressen von überall
+Beispiel: Intnet als gemeinsame interne Schnittstelle für VirtualBox.
 
-Beispiel:
-ssh user@100.x.x.x
+Nach der Installation von Tailscale auf allen Systemen erhält man einen Link, um den Login zu bestätigen.
+
+Dadurch wird das jeweilige OS zur Tailscale-Liste hinzugefügt, die wir auf der Tailscale-Webseite von unserem Host aus sehen können.
+
+Access Control Lists (ACLs) in Tailscale wurden angepasst:
+
+- Alle Adressen der Systeme freigeschaltet
+- Meine Mailadresse als Quelle
+- Port 50000 aktiviert
+
+SSH-Verbindungen zwischen Systemen:
+
+Da nicht der Standardport 22 verwendet wird, muss die Verbindung von einem OS zum anderen mit folgendem Befehl aufgebaut werden:
+ssh -p 50000 mario@100.x.x.x
 
 ---
 

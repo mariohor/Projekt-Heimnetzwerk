@@ -150,6 +150,8 @@ SSH-Verbindungen zwischen Systemen:
 Da nicht der Standardport 22 verwendet wird, muss die Verbindung von einem OS zum anderen mit folgendem Befehl aufgebaut werden:
 ssh -p 50000 mario@100.x.x.x
 
+<p align="center"> <img src="screenshoots/SSH-Tailscale-Verbindung.jpg" alt="SSH Verbindung Tailscale" width="700"> </p>
+
 ---
 
 ## 🧠 Was ich gelernt habe

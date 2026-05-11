@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Virtuelle Netzwerk- & Security-Umgebung | Portfolio Mario Horvat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Virtuelle Heimnetzwerk- und Security-Umgebung mit pfSense, Linux- und Windows-Systemen, SSH-Hardening und Tailscale." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Virtuelle Netzwerk- &amp; Security-Umgebung (Heimnetzwerk)</h1>
+      <p class="subtitle">Lab-Umgebung mit pfSense, mehreren Linux-Distributionen, Windows 11, SSH-Hardening &amp; Tailscale</p>
+      <nav>
+        <ul>
+          <li><a href="#overview">Projektübersicht</a></li>
+          <li><a href="#goals">Ziele</a></li>
+          <li><a href="#setup">Setup</a></li>
+          <li><a href="#systems">Verwendete Systeme</a></li>
+          <li><a href="#ssh">SSH-Konfiguration</a></li>
+          <li><a href="#network">Netzwerk &amp; Tailscale</a></li>
+          <li><a href="#learning">Was ich gelernt habe</a></li>
+          <li><a href="#about">Autor</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="overview" class="section">
+      <div class="container">
+        <h2>Projektübersicht</h2>
+        <p>
+          Dieses Projekt zeigt den Aufbau einer virtualisierten Netzwerkumgebung mit mehreren Linux- und Windows-Systemen.
+          Ziel war es, sichere Kommunikation zwischen den Systemen zu ermöglichen sowie Remotezugriffe effizient und praxisnah umzusetzen.
+          Der Fokus lag auf SSH-Authentifizierung, Netzwerkverständnis und der Nutzung eines modernen VPNs (Tailscale).
+        </p>
+        <div class="highlight-box">
+          <h3>Netzwerkdiagramm</h3>
+          <p>Visuelle Übersicht über die gesamte virtuelle Umgebung.</p>
+          <!-- Optional: <img src="screenshoots/network-diagram.png" alt="Netzwerktopologie" /> -->
+        </div>
+      </div>
+    </section>
+
+    <section id="goals" class="section">
+      <div class="container">
+        <h2>Ziele des Projekts</h2>
+        <ul>
+          <li>Aufbau einer virtuellen Testumgebung</li>
+          <li>Sichere Verbindung zwischen mehreren Systemen</li>
+          <li>Umsetzung von SSH-Key-basierter Authentifizierung</li>
+          <li>Einrichtung eines einfachen, sicheren Remotezugriffs</li>
+          <li>Verständnis von IP-Strukturen und Netzwerkkommunikation</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="setup" class="section">
+      <div class="container">
+        <h2>Setup</h2>
+        <p><strong>Virtualisierung:</strong> Oracle VM VirtualBox</p>
+        <ul>
+          <li>Mehrere virtuelle Maschinen (Linux &amp; Windows)</li>
+          <li>Gemeinsames internes Netzwerk zur Kommunikation</li>
+          <li>pfSense als Firewall und Router für das interne Netzwerk</li>
+        </ul>
+        <p>
+          Nach der Einrichtung von pfSense habe ich überprüft, welche Ports und welche WebGUI-Protokollversion verwendet werden,
+          um sicheren Zugriff über den Browser zu gewährleisten.
+        </p>
+        <pre><code>grep -A 5 "" /cf/conf/config.xml</code></pre>
+      </div>
+    </section>
+
+    <section id="systems" class="section">
+      <div class="container">
+        <h2>Verwendete Systeme</h2>
+        <ul class="systems-list">
+          <li>pfSense</li>
+          <li>Debian</li>
+          <li>AlmaLinux</li>
+          <li>Ubuntu Server</li>
+          <li>Ubuntu Desktop</li>
+          <li>Arch Linux</li>
+          <li>Windows 11</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="ssh" class="section">
+      <div class="container">
+        <h2>SSH‑Konfiguration</h2>
+        <h3>Gemeinsame Einstellungen auf allen Systemen</h3>
+        <p>Vor der eigentlichen SSH‑Konfiguration wurden alle Linux‑Distributionen aktualisiert und der SSH‑Dienst geprüft:</p>
+        <pre><code>sudo systemctl status ssh
+sudo systemctl enable ssh
+sudo systemctl start ssh</code></pre>
+
+        <h3>Sicherheitsrelevante Einstellungen</h3>
+        <ul>
+          <li><strong>PermitRootLogin no:</strong> Root‑Login deaktiviert</li>
+          <li><strong>PubkeyAuthentication yes:</strong> Nur SSH‑Key‑Authentifizierung</li>
+          <li><strong>PasswordAuthentication no:</strong> Passwort‑Login deaktiviert</li>
+          <li><strong>MaxSessions 1:</strong> Nur eine aktive SSH‑Session pro Verbindung</li>
+          <li><strong>Port 50000:</strong> Alternativer SSH‑Port zur Reduktion von Standard‑Scans</li>
+        </ul>
+
+        <p>
+          Hostnames (z. B. <code>arch</code>, <code>debian</code>, <code>ubuntu-desktop</code>, <code>alma</code>, <code>win11</code>)
+          wurden zentral dokumentiert, um Verbindungen ohne IP‑Nachschlagen aufzubauen.
+        </p>
+
+        <h3>SSH unter Windows</h3>
+        <ul>
+          <li>Erstellung von SSH-Key-Paaren</li>
+          <li>Verteilung der Public Keys auf Linux-Systeme</li>
+          <li>Passwortlose Anmeldung, z. B. <code>ssh arch</code> von Windows 11</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="network" class="section">
+      <div class="container">
+        <h2>Netzwerk &amp; Tailscale-Integration</h2>
+        <p>
+          Alle VMs wurden in dasselbe interne Netzwerk wie pfSense eingebunden (z. B. <strong>Intnet</strong> in VirtualBox).
+        </p>
+        <p>
+          Nach der Installation von Tailscale auf allen Systemen erfolgt die Anmeldung über einen Bestätigungslink,
+          woraufhin die Systeme in der Tailscale-Liste erscheinen.
+        </p>
+        <h3>ACLs &amp; SSH über Tailscale</h3>
+        <ul>
+          <li>Freischaltung aller relevanten Adressen</li>
+          <li>Meine Mailadresse als Quelle</li>
+          <li>Port 50000 für SSH aktiviert</li>
+        </ul>
+        <p>SSH-Verbindung über Tailscale (nicht Standardport 22):</p>
+        <pre><code>ssh -p 50000 mario@100.x.x.x</code></pre>
+      </div>
+    </section>
+
+    <section id="learning" class="section">
+      <div class="container">
+        <h2>Was ich gelernt habe</h2>
+        <ul>
+          <li>Vertieftes Verständnis für virtuelle Netzwerkarchitekturen und Kommunikation zwischen verschiedenen Betriebssystemen</li>
+          <li>Sichere SSH‑Konfigurationen (Key‑Auth, Port‑Anpassung, Hostname‑basierter Zugriff)</li>
+          <li>Analyse und Behebung typischer Netzwerkprobleme (DNS, Routing, Firewall, Adaptereinstellungen)</li>
+          <li>Effiziente Remotezugriffe über SSH, RDP und Tailscale ohne öffentliche Portfreigaben</li>
+          <li>Strukturierter Aufbau einer Laborumgebung inkl. Dokumentation, Screenshots und Netzwerkdiagrammen</li>
+          <li>Praxisnahe Arbeit mit mehreren Linux‑Distributionen und deren Systemdiensten</li>
+          <li>Konfiguration von pfSense (WAN/LAN, GUI, internes Netzwerk)</li>
+          <li>Verbesserte Dokumentations‑ und GitHub‑Skills</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>Autor</h2>
+        <p><strong>Mario Horvat</strong></p>
+        <p>
+          Dieses Projekt wurde vollständig von mir erstellt.
+          Inhalte, Texte, Screenshots und Diagramme dürfen ohne meine ausdrückliche Zustimmung nicht kopiert oder weiterverwendet werden.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Mario Horvat · Projekt-Heimnetzwerk</p>
+    </div>
+  </footer>
+</body>
+</html>
